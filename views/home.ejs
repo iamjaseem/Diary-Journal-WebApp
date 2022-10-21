@@ -1,0 +1,18 @@
+<%# ADDING HEADER %>
+<%- include('partials/header'); -%>
+<%# //STARTING HEADER AND CONTENT IN HOMEPAGE %>
+<h1>Home</h1>
+<p><%=homeStartingContent%></p>
+<%# POSTS CONTENT IN HOMEPAGE %>
+<%posts.forEach(function(post){%>
+<h1><%=post.userTitle%></h1>
+<p>
+  <%# TRUNCATE THE post to 100 char %>
+  <%=post.userPost.substring(0,100)+"..."%>
+  <%# read more option %>
+  <a href="/posts/<%=post.userTitle%>">Read more</a>
+</p>
+
+<%})%>
+
+<%- include('partials/footer'); -%>
